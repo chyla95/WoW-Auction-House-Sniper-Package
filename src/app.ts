@@ -1,13 +1,5 @@
 import { configurationBattleNetApi } from "./configuration/configuration-battle-net";
-
-import { AuctionHouseScanner } from "./classes/auction-house-scanner";
-import { Item } from "./classes/item";
-import { setTimeout } from "timers/promises";
-import { RealmGroup } from "./classes/realm-group";
-import { Locales, Regions } from "./utilities/helper-functions/battle-net-api-localization";
 import { setupConsole } from "./utilities/setup-console";
-import { Realm } from "./classes/realm";
-import { sendAuctionFoundEmbed } from "./utilities/other/embed-auction-found";
 import { BattleNetApi } from "./services/battle-net-api";
 
 setupConsole();
@@ -24,6 +16,10 @@ const ahSniper = {
 export default ahSniper;
 
 export * from "./classes/item";
+export * from "./classes/realm";
+export * from "./classes/realm-group";
+export * from "./utilities/helper-functions/battle-net-api-localization";
+export * from "./classes/auction-house-scanner";
 
 // const localization = { region: Regions.Europe, locale: Locales.en_GB };
 // const realmsToScan = ["Draenor", "Burning legion", "Blackrock"];

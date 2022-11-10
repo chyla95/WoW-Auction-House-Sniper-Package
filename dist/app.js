@@ -36,6 +36,10 @@ const ahSniper = {
 };
 exports.default = ahSniper;
 __exportStar(require("./classes/item"), exports);
+__exportStar(require("./classes/realm"), exports);
+__exportStar(require("./classes/realm-group"), exports);
+__exportStar(require("./utilities/helper-functions/battle-net-api-localization"), exports);
+__exportStar(require("./classes/auction-house-scanner"), exports);
 // const localization = { region: Regions.Europe, locale: Locales.en_GB };
 // const realmsToScan = ["Draenor", "Burning legion", "Blackrock"];
 // const itemIdsToFind = [
