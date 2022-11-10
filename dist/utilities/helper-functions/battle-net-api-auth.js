@@ -13,20 +13,20 @@ exports.getAuthToken = exports.getAuthCredentials = void 0;
 const simple_oauth2_1 = require("simple-oauth2");
 const configuration_battle_net_1 = require("../../configuration/configuration-battle-net");
 const battle_net_api_localization_1 = require("./battle-net-api-localization");
-const options = {
-    client: {
-        id: configuration_battle_net_1.configurationBattleNetApi.clientId,
-        secret: configuration_battle_net_1.configurationBattleNetApi.clientSecret,
-    },
-    auth: {
-        tokenHost: configuration_battle_net_1.configurationBattleNetApi.apiAuthUrl(battle_net_api_localization_1.Regions.Europe),
-    },
-};
-const client = new simple_oauth2_1.ClientCredentials(options);
 let accessToken;
 const getAuthCredentials = () => __awaiter(void 0, void 0, void 0, function* () {
     if (accessToken && !accessToken.expired())
         return accessToken;
+    const options = {
+        client: {
+            id: configuration_battle_net_1.configurationBattleNetApi.clientId,
+            secret: configuration_battle_net_1.configurationBattleNetApi.clientSecret,
+        },
+        auth: {
+            tokenHost: configuration_battle_net_1.configurationBattleNetApi.apiAuthUrl(battle_net_api_localization_1.Regions.Europe),
+        },
+    };
+    const client = new simple_oauth2_1.ClientCredentials(options);
     try {
         accessToken = yield client.getToken(options);
     }

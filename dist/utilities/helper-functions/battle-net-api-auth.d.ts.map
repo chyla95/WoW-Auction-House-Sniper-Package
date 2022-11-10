@@ -1,1 +1,1 @@
-{"version":3,"file":"battle-net-api-auth.d.ts","sourceRoot":"","sources":["../../../src/utilities/helper-functions/battle-net-api-auth.ts"],"names":[],"mappings":"AAAA,OAAO,EAAqB,WAAW,EAAE,MAAM,eAAe,CAAC;AAiB/D,eAAO,MAAM,kBAAkB,wCAS9B,CAAC;AAEF,eAAO,MAAM,YAAY,mCAMxB,CAAC"}
+{"version":3,"file":"battle-net-api-auth.d.ts","sourceRoot":"","sources":["../../../src/utilities/helper-functions/battle-net-api-auth.ts"],"names":[],"mappings":"AAAA,OAAO,EAAqB,WAAW,EAAE,MAAM,eAAe,CAAC;AAK/D,eAAO,MAAM,kBAAkB,wCAoB9B,CAAC;AAEF,eAAO,MAAM,YAAY,mCAMxB,CAAC"}
