@@ -13,17 +13,17 @@ exports.getAuthToken = exports.getAuthCredentials = exports.areCredentialsInitia
 const simple_oauth2_1 = require("simple-oauth2");
 const configuration_battle_net_1 = require("../../configuration/configuration-battle-net");
 const battle_net_api_localization_1 = require("./battle-net-api-localization");
-let id;
-let secret;
+let initializedClientId;
+let initializedClientSecret;
 const initializeCredentials = (clientId, clientSecret) => {
-    if (clientId && clientSecret)
+    if (initializedClientId && initializedClientSecret)
         throw new Error("Credentials are already initialized!");
-    id = clientId;
-    secret = clientSecret;
+    initializedClientId = clientId;
+    initializedClientSecret = clientSecret;
 };
 exports.initializeCredentials = initializeCredentials;
 const areCredentialsInitialized = () => {
-    if (!id || !secret)
+    if (!initializedClientId || !initializedClientSecret)
         return false;
     return true;
 };
@@ -36,8 +36,8 @@ const getAuthCredentials = () => __awaiter(void 0, void 0, void 0, function* () 
         return accessToken;
     const options = {
         client: {
-            id: id,
-            secret: secret,
+            id: initializedClientId,
+            secret: initializedClientSecret,
         },
         auth: {
             tokenHost: configuration_battle_net_1.configurationBattleNetApi.apiAuthUrl(battle_net_api_localization_1.Regions.Europe),

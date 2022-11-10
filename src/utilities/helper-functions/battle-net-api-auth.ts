@@ -2,17 +2,17 @@ import { ClientCredentials, AccessToken } from "simple-oauth2";
 import { configurationBattleNetApi } from "../../configuration/configuration-battle-net";
 import { Regions } from "./battle-net-api-localization";
 
-let id: string;
-let secret: string;
+let initializedClientId: string;
+let initializedClientSecret: string;
 export const initializeCredentials = (clientId: string, clientSecret: string) => {
-  if (clientId && clientSecret) throw new Error("Credentials are already initialized!");
+  if (initializedClientId && initializedClientSecret) throw new Error("Credentials are already initialized!");
 
-  id = clientId;
-  secret = clientSecret;
+  initializedClientId = clientId;
+  initializedClientSecret = clientSecret;
 };
 
 export const areCredentialsInitialized = () => {
-  if (!id || !secret) return false;
+  if (!initializedClientId || !initializedClientSecret) return false;
 
   return true;
 };
@@ -24,8 +24,8 @@ export const getAuthCredentials = async () => {
 
   const options = {
     client: {
-      id: id,
-      secret: secret,
+      id: initializedClientId,
+      secret: initializedClientSecret,
     },
     auth: {
       tokenHost: configurationBattleNetApi.apiAuthUrl(Regions.Europe)!,
