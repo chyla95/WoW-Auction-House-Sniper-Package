@@ -1,0 +1,1 @@
+{"version":3,"file":"realm-groups-response.d.ts","sourceRoot":"","sources":["../../../../src/services/requests/interfaces/realm-groups-response.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,KAAK,EAAE,MAAM,EAAE,MAAM,YAAY,CAAC;AAE3C,MAAM,WAAW,oBAAoB;IACnC,MAAM,EAAE,MAAM,CAAC;IACf,gBAAgB,EAAE,KAAK,EAAE,CAAC;CAC3B"}

@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/app.js",
+  "types": "dist/app.d.ts",
   "scripts": {
     "start": "tsc && node dist/app.js",
     "start:fake": "tsc && nodemon dist/app.js",
     "start:dev": "nodemon src/app.ts",
-    "deploy": "tsc && npm publish"
+    "deploy": "tsc && npm publish",
+    "build:types": "tsc -d --declarationDir dist --declarationMap --emitDeclarationOnly"
   },
   "author": "",
   "license": "ISC",

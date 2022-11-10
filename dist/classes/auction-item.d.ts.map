@@ -1,0 +1,1 @@
+{"version":3,"file":"auction-item.d.ts","sourceRoot":"","sources":["../../src/classes/auction-item.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,oBAAoB,EAAE,MAAM,4BAA4B,CAAC;AAClE,OAAO,EAAE,YAAY,EAAE,MAAM,wDAAwD,CAAC;AAGtF,qBAAa,WAAW;IACtB,QAAQ,CAAC,EAAE,EAAE,MAAM,CAAC;gBAER,eAAe,EAAE,YAAY;IAInC,YAAY,CAAC,YAAY,EAAE,oBAAoB;CAGtD"}
