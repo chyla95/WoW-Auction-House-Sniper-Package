@@ -1,3 +1,5 @@
+import { configurationBattleNetApi } from "./configuration/configuration-battle-net";
+
 import { AuctionHouseScanner } from "./classes/auction-house-scanner";
 import { Item } from "./classes/item";
 import { setTimeout } from "timers/promises";
@@ -6,16 +8,22 @@ import { Locales, Regions } from "./utilities/helper-functions/battle-net-api-lo
 import { setupConsole } from "./utilities/setup-console";
 import { Realm } from "./classes/realm";
 import { sendAuctionFoundEmbed } from "./utilities/other/embed-auction-found";
+import { BattleNetApi } from "./services/battle-net-api";
 
 setupConsole();
 
 const ahSniper = {
-  connect: (bnClientId: string, bnClientSecret: string) => {
-    console.log(bnClientId, bnClientSecret);
+  connect: async (bnClientId: string, bnClientSecret: string) => {
+    configurationBattleNetApi.clientId = bnClientId;
+    configurationBattleNetApi.clientSecret = bnClientSecret;
+
+    return await BattleNetApi.getAuthCredentials();
   },
 };
 
 export default ahSniper;
+
+export * from "./classes/item";
 
 // const localization = { region: Regions.Europe, locale: Locales.en_GB };
 // const realmsToScan = ["Draenor", "Burning legion", "Blackrock"];

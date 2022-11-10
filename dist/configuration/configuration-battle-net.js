@@ -9,6 +9,6 @@ exports.configurationBattleNetApi = {
     apiDomain: (region) => {
         return `https://${(0, battle_net_api_localization_1.getRegionString)(region)}.api.blizzard.com`;
     },
-    clientId: process.env.BATTLE_NET_CLIENT_ID,
-    clientSecret: process.env.BATTLE_NET_CLIENT_SECRET,
+    clientId: "",
+    clientSecret: "",
 };
