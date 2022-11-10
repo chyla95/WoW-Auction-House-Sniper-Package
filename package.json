@@ -11,6 +11,10 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chyla95/WoW-AH-Sniper-Package.git"
+  },
   "devDependencies": {
     "@types/node": "^18.11.5",
     "@types/simple-oauth2": "^4.1.1",
