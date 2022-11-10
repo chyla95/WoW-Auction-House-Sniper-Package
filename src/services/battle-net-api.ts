@@ -1,5 +1,5 @@
 import { Locales, Namespaces, Regions } from "../utilities/helper-functions/battle-net-api-localization";
-import { getAuthCredentials } from "../utilities/helper-functions/battle-net-api-auth";
+import { getAuthCredentials, initializeCredentials } from "../utilities/helper-functions/battle-net-api-auth";
 import { fetchRawData } from "../utilities/helper-functions/battle-net-api-request";
 
 export interface IRequestLocalization {
@@ -8,10 +8,18 @@ export interface IRequestLocalization {
 }
 
 export class BattleNetApi {
+  static async connect(clientId: string, clientSecret: string) {
+    initializeCredentials(clientId, clientSecret);
+
+    const credentials = await this.getAuthCredentials();
+    return credentials;
+  }
+
   static async getAuthCredentials() {
     const credentials = await getAuthCredentials();
     return credentials;
   }
+
   static async getAuthToken() {
     const credentials = await this.getAuthCredentials();
     if (!credentials) return;

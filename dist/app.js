@@ -23,15 +23,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const configuration_battle_net_1 = require("./configuration/configuration-battle-net");
 const setup_console_1 = require("./utilities/setup-console");
 const battle_net_api_1 = require("./services/battle-net-api");
 (0, setup_console_1.setupConsole)();
 const ahSniper = {
     connect: (bnClientId, bnClientSecret) => __awaiter(void 0, void 0, void 0, function* () {
-        configuration_battle_net_1.configurationBattleNetApi.clientId = bnClientId;
-        configuration_battle_net_1.configurationBattleNetApi.clientSecret = bnClientSecret;
-        return yield battle_net_api_1.BattleNetApi.getAuthCredentials();
+        return yield battle_net_api_1.BattleNetApi.connect(bnClientId, bnClientSecret);
     }),
 };
 exports.default = ahSniper;

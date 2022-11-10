@@ -1,1 +1,1 @@
-{"version":3,"file":"configuration-battle-net.d.ts","sourceRoot":"","sources":["../../src/configuration/configuration-battle-net.ts"],"names":[],"mappings":"AAAA,OAAO,EAAmB,OAAO,EAAE,MAAM,2DAA2D,CAAC;AAErG,eAAO,MAAM,yBAAyB;yBACf,OAAO;wBAGR,OAAO;;;CAK5B,CAAC"}
+{"version":3,"file":"configuration-battle-net.d.ts","sourceRoot":"","sources":["../../src/configuration/configuration-battle-net.ts"],"names":[],"mappings":"AAAA,OAAO,EAAmB,OAAO,EAAE,MAAM,2DAA2D,CAAC;AAErG,eAAO,MAAM,yBAAyB;yBACf,OAAO;wBAGR,OAAO;CAG5B,CAAC"}

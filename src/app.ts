@@ -1,4 +1,3 @@
-import { configurationBattleNetApi } from "./configuration/configuration-battle-net";
 import { setupConsole } from "./utilities/setup-console";
 import { BattleNetApi } from "./services/battle-net-api";
 
@@ -6,10 +5,7 @@ setupConsole();
 
 const ahSniper = {
   connect: async (bnClientId: string, bnClientSecret: string) => {
-    configurationBattleNetApi.clientId = bnClientId;
-    configurationBattleNetApi.clientSecret = bnClientSecret;
-
-    return await BattleNetApi.getAuthCredentials();
+    return await BattleNetApi.connect(bnClientId, bnClientSecret);
   },
 };
 

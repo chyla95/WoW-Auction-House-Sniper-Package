@@ -7,6 +7,4 @@ export const configurationBattleNetApi = {
   apiDomain: (region: Regions) => {
     return `https://${getRegionString(region)}.api.blizzard.com`;
   },
-  clientId: "",
-  clientSecret: "",
 };

@@ -13,6 +13,13 @@ exports.BattleNetApi = void 0;
 const battle_net_api_auth_1 = require("../utilities/helper-functions/battle-net-api-auth");
 const battle_net_api_request_1 = require("../utilities/helper-functions/battle-net-api-request");
 class BattleNetApi {
+    static connect(clientId, clientSecret) {
+        return __awaiter(this, void 0, void 0, function* () {
+            (0, battle_net_api_auth_1.initializeCredentials)(clientId, clientSecret);
+            const credentials = yield this.getAuthCredentials();
+            return credentials;
+        });
+    }
     static getAuthCredentials() {
         return __awaiter(this, void 0, void 0, function* () {
             const credentials = yield (0, battle_net_api_auth_1.getAuthCredentials)();

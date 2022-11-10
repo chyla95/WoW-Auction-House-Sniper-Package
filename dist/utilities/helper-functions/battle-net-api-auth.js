@@ -9,18 +9,35 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAuthToken = exports.getAuthCredentials = void 0;
+exports.getAuthToken = exports.getAuthCredentials = exports.areCredentialsInitialized = exports.initializeCredentials = void 0;
 const simple_oauth2_1 = require("simple-oauth2");
 const configuration_battle_net_1 = require("../../configuration/configuration-battle-net");
 const battle_net_api_localization_1 = require("./battle-net-api-localization");
+let id;
+let secret;
+const initializeCredentials = (clientId, clientSecret) => {
+    if (clientId && clientSecret)
+        throw new Error("Credentials are already initialized!");
+    id = clientId;
+    secret = clientSecret;
+};
+exports.initializeCredentials = initializeCredentials;
+const areCredentialsInitialized = () => {
+    if (!id || !secret)
+        return false;
+    return true;
+};
+exports.areCredentialsInitialized = areCredentialsInitialized;
 let accessToken;
 const getAuthCredentials = () => __awaiter(void 0, void 0, void 0, function* () {
+    if (!(0, exports.areCredentialsInitialized)())
+        throw new Error("Credentials are not initialized!");
     if (accessToken && !accessToken.expired())
         return accessToken;
     const options = {
         client: {
-            id: configuration_battle_net_1.configurationBattleNetApi.clientId,
-            secret: configuration_battle_net_1.configurationBattleNetApi.clientSecret,
+            id: id,
+            secret: secret,
         },
         auth: {
             tokenHost: configuration_battle_net_1.configurationBattleNetApi.apiAuthUrl(battle_net_api_localization_1.Regions.Europe),
