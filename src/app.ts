@@ -16,3 +16,10 @@ export * from "./classes/realm-groups";
 export * from "./classes/realm-group";
 export * from "./classes/realm";
 export * from "./classes/item";
+
+// How to update the package:
+// 1. Run: npm run build
+// 2. Commit and push changes to github
+
+// How to install the package:
+// 1. Run: npm i {link to github repo}

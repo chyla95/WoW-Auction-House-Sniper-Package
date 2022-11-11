@@ -39,3 +39,8 @@ __exportStar(require("./classes/realm-groups"), exports);
 __exportStar(require("./classes/realm-group"), exports);
 __exportStar(require("./classes/realm"), exports);
 __exportStar(require("./classes/item"), exports);
+// How to update the package:
+// 1. Run: npm run build
+// 2. Commit and push changes to github
+// How to install the package:
+// 1. Run: npm i {link to github repo}
