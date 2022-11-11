@@ -1,21 +1,21 @@
-import { setupConsole } from "./utilities/setup-console";
 import { BattleNetApi } from "./services/battle-net-api";
-
-setupConsole();
 
 const ahSniper = {
   connect: async (bnClientId: string, bnClientSecret: string) => {
-    return await BattleNetApi.connect(bnClientId, bnClientSecret);
+    const connection = await BattleNetApi.connect(bnClientId, bnClientSecret);
+    if (!connection) throw new Error("Could not connect to the API!");
+
+    return connection;
   },
 };
-
 export default ahSniper;
 
-export * from "./classes/item";
-export * from "./classes/realm";
-export * from "./classes/realm-group";
 export * from "./utilities/helper-functions/battle-net-api-localization";
 export * from "./classes/auction-house-scanner";
+export * from "./classes/realm-groups";
+export * from "./classes/realm-group";
+export * from "./classes/realm";
+export * from "./classes/item";
 
 // const localization = { region: Regions.Europe, locale: Locales.en_GB };
 // const realmsToScan = ["Draenor", "Burning legion", "Blackrock"];

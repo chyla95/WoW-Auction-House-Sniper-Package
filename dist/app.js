@@ -23,20 +23,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const setup_console_1 = require("./utilities/setup-console");
 const battle_net_api_1 = require("./services/battle-net-api");
-(0, setup_console_1.setupConsole)();
 const ahSniper = {
     connect: (bnClientId, bnClientSecret) => __awaiter(void 0, void 0, void 0, function* () {
-        return yield battle_net_api_1.BattleNetApi.connect(bnClientId, bnClientSecret);
+        const connection = yield battle_net_api_1.BattleNetApi.connect(bnClientId, bnClientSecret);
+        if (!connection)
+            throw new Error("Could not connect to the API!");
+        return connection;
     }),
 };
 exports.default = ahSniper;
-__exportStar(require("./classes/item"), exports);
-__exportStar(require("./classes/realm"), exports);
-__exportStar(require("./classes/realm-group"), exports);
 __exportStar(require("./utilities/helper-functions/battle-net-api-localization"), exports);
 __exportStar(require("./classes/auction-house-scanner"), exports);
+__exportStar(require("./classes/realm-groups"), exports);
+__exportStar(require("./classes/realm-group"), exports);
+__exportStar(require("./classes/realm"), exports);
+__exportStar(require("./classes/item"), exports);
 // const localization = { region: Regions.Europe, locale: Locales.en_GB };
 // const realmsToScan = ["Draenor", "Burning legion", "Blackrock"];
 // const itemIdsToFind = [
