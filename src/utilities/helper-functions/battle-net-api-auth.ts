@@ -5,7 +5,7 @@ import { Regions } from "./battle-net-api-localization";
 let initializedClientId: string;
 let initializedClientSecret: string;
 export const initializeCredentials = (clientId: string, clientSecret: string) => {
-  if (initializedClientId && initializedClientSecret) throw new Error("Credentials are already initialized!");
+  if (initializedClientId && initializedClientSecret) throw new Error("Credentials cannot be re-initialized!");
 
   initializedClientId = clientId;
   initializedClientSecret = clientSecret;
@@ -19,7 +19,7 @@ export const areCredentialsInitialized = () => {
 
 let accessToken: AccessToken | undefined;
 export const getAuthCredentials = async () => {
-  if (!areCredentialsInitialized()) throw new Error("Credentials are not initialized!");
+  if (!areCredentialsInitialized()) throw new Error("Missing credentials!");
   if (accessToken && !accessToken.expired()) return accessToken;
 
   const options = {

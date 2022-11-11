@@ -17,7 +17,7 @@ let initializedClientId;
 let initializedClientSecret;
 const initializeCredentials = (clientId, clientSecret) => {
     if (initializedClientId && initializedClientSecret)
-        throw new Error("Credentials are already initialized!");
+        throw new Error("Credentials cannot be re-initialized!");
     initializedClientId = clientId;
     initializedClientSecret = clientSecret;
 };
@@ -31,7 +31,7 @@ exports.areCredentialsInitialized = areCredentialsInitialized;
 let accessToken;
 const getAuthCredentials = () => __awaiter(void 0, void 0, void 0, function* () {
     if (!(0, exports.areCredentialsInitialized)())
-        throw new Error("Credentials are not initialized!");
+        throw new Error("Missing credentials!");
     if (accessToken && !accessToken.expired())
         return accessToken;
     const options = {
